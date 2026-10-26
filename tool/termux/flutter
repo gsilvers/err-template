@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/sh
+# Runs flutter (or dart, when called by that name) inside the Debian container
+# that setup.sh made, in the current folder. setup.sh installs this into Termux.
+exec proot-distro login debian --work-dir "$PWD" -- "$(basename "$0")" "$@"
